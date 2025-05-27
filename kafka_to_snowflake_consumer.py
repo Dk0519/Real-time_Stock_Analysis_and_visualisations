@@ -4,9 +4,9 @@ import json
 
 # Snowflake connection
 conn = snowflake.connector.connect(
-    user='DIVYANSHU0519',
-    password='Divyanshu@0519',
-    account='QH13814.ap-southeast-1',
+    user='xxxxxxxxxxx',
+    password='xxxxxxxxxxxx',
+    account='xxxxxxxxxxxxx',
     warehouse='COMPUTE_WH',
     database='STOCK_DB',
     schema='PUBLIC'
@@ -21,12 +21,12 @@ consumer = KafkaConsumer(
     value_deserializer=lambda m: json.loads(m.decode('utf-8'))
 )
 
-print("🟢 Kafka Consumer started...")
+print("Kafka Consumer started...")
 
 # Consume messages
 for message in consumer:
     data = message.value
-    print(f"📥 Consumed: {data}")
+    print(f" Consumed: {data}")
     
     # Insert into Snowflake
     cursor.execute("""
@@ -42,4 +42,4 @@ for message in consumer:
         data['volume']
     ))
 
-    print("✅ Inserted into Snowflake")
+    print(" Inserted into Snowflake")
