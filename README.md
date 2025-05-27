@@ -89,4 +89,4 @@ Or connect directly via FMP API for live data.
 ## 🤝 Credits
 
 Stock data via [yfinance](https://yfinance.yahoo.com) and [FMP API](https://financialmodelingprep.com)  
-Built and tested by **You**
+Built and tested by **Divyanshu Kumar**
